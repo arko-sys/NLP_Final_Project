@@ -43,7 +43,7 @@ BERT (Bidirectional Encoder Representations from Transformers) is a transformer-
 2. **Training**: The model was fine-tuned on the labeled dataset using cross-entropy loss.
 
 **Evaluation Results for BERT:**
-
+- Accuracy: 0.89
 
 ### Multinomial Naive Bayes (BNB)
 BNB is a probabilistic classifier based on Bayes' theorem, typically used for text classification. It assumes that the features (words) are conditionally independent, given the class.
@@ -52,7 +52,7 @@ BNB is a probabilistic classifier based on Bayes' theorem, typically used for te
 2. **Training**: The model was trained using the Naive Bayes classifier.
 
 **Evaluation Results for BNB:**
-
+- Accuracy: 0.78
 
 ### Logistic Regression (LR)
 Logistic Regression is a linear model that predicts the probability of a class based on a linear combination of input features. It is widely used for binary and multiclass classification tasks.
@@ -61,7 +61,7 @@ Logistic Regression is a linear model that predicts the probability of a class b
 2. **Training**: The model was trained using logistic regression with regularization.
 
 **Evaluation Results for LR:**
-
+- Accuracy: 0.85
 
 ---
 
@@ -118,5 +118,27 @@ After training the DistilBERT model, we used it to perform sentiment analysis on
 The final step involved comparing the sentiment analysis results with the current FanDuel money line values, which indicate the odds or expectations for each team. By comparing team sentiment (as derived from the Reddit posts) with the betting odds, we sought to uncover any potential correlations or discrepancies between how fans feel about a team and the odds provided by FanDuel.
 
 This analysis allows us to gauge whether the sentiment of the fan base is aligned with the betting markets. If a significant mismatch is identified, it may suggest a potential opportunity for betting or further investigation into factors affecting fan sentiment or team performance.
+
+team
+Arsenal              0.775934
+Aston Villa          0.682081
+Bournemouth          0.783920
+Brentford            0.736641
+Brighton             0.820669
+Chelsea              0.778523
+Crystal Palace       0.776316
+Everton              0.631258
+Fulham               0.568905
+Ipswich Town         0.740088
+Leicester City       0.561983
+Liverpool            0.615605
+Man City             0.596692
+Man United           0.568584
+Newcastle            0.517703
+Nottingham Forest    0.621677
+Southampton          0.533333
+Tottenham            0.693164
+West Ham             0.624535
+Wolves               0.713287
 
 The results from this analysis will be useful for understanding the relationship between public sentiment and betting behavior, providing valuable insights for both sports enthusiasts and bettors.
