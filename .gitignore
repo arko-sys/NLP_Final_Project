@@ -1,0 +1,6 @@
+venv/
+data/
+data_processed/
+data_raw/
+model_scripts/logs/
+model_scripts/results/
