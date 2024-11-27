@@ -119,26 +119,30 @@ The final step involved comparing the sentiment analysis results with the curren
 
 This analysis allows us to gauge whether the sentiment of the fan base is aligned with the betting markets. If a significant mismatch is identified, it may suggest a potential opportunity for betting or further investigation into factors affecting fan sentiment or team performance.
 
-team
-Arsenal              0.775934
-Aston Villa          0.682081
-Bournemouth          0.783920
-Brentford            0.736641
-Brighton             0.820669
-Chelsea              0.778523
-Crystal Palace       0.776316
-Everton              0.631258
-Fulham               0.568905
-Ipswich Town         0.740088
-Leicester City       0.561983
-Liverpool            0.615605
-Man City             0.596692
-Man United           0.568584
-Newcastle            0.517703
-Nottingham Forest    0.621677
-Southampton          0.533333
-Tottenham            0.693164
-West Ham             0.624535
-Wolves               0.713287
+### Team Sentiment Scores
+
+| Team                | Sentiment Score |
+|---------------------|-----------------|
+| Arsenal            | 0.775934        |
+| Aston Villa        | 0.682081        |
+| Bournemouth        | 0.783920        |
+| Brentford          | 0.736641        |
+| Brighton           | 0.820669        |
+| Chelsea            | 0.778523        |
+| Crystal Palace     | 0.776316        |
+| Everton            | 0.631258        |
+| Fulham             | 0.568905        |
+| Ipswich Town       | 0.740088        |
+| Leicester City     | 0.561983        |
+| Liverpool          | 0.615605        |
+| Man City           | 0.596692        |
+| Man United         | 0.568584        |
+| Newcastle          | 0.517703        |
+| Nottingham Forest  | 0.621677        |
+| Southampton        | 0.533333        |
+| Tottenham          | 0.693164        |
+| West Ham           | 0.624535        |
+| Wolves             | 0.713287        |
+
 
 The results from this analysis will be useful for understanding the relationship between public sentiment and betting behavior, providing valuable insights for both sports enthusiasts and bettors.
