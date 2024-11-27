@@ -1,4 +1,4 @@
-# README: Sentiment Analysis of Reddit Posts for Premier League Teams
+# Sentiment Analysis of Reddit Posts for Premier League Teams
 
 ## Overview
 This project performs sentiment analysis on Reddit posts related to the 20 Premier League soccer teams. The posts are scraped using the PRAW (Python Reddit API Wrapper) library, and the data is then preprocessed, cleaned, and analyzed using machine learning techniques to classify the sentiment as either positive or negative. We use a variety of machine learning models, including traditional methods like Naive Bayes, Logistic Regression, and advanced models like DistilBERT.
