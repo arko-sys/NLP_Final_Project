@@ -17,7 +17,7 @@ from mylib.lib import tokenize_function
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
 
 # Load the dataset
-df = pd.read_csv('../data_processed/large_reddit_labelled.csv')  
+df = pd.read_csv('data_processed/large_reddit_labelled.csv')  
 
 print(df.shape)
 
@@ -80,7 +80,7 @@ plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
 plt.title('ROC Curve - DistilBERT (Without Fine-tuning)')
 plt.legend(loc="lower right")
-plt.savefig('../analysis_plots/roc_curve_bert_no_finetune.png', dpi=300, bbox_inches='tight')
+plt.savefig('analysis_plots/roc_curve_bert_no_finetune.png', dpi=300, bbox_inches='tight')
 
 # Compute Confusion Matrix
 cf_matrix = confusion_matrix(y_test, y_preds)
@@ -97,4 +97,4 @@ sns.heatmap(cf_matrix, annot=labels, cmap='Blues', fmt='', xticklabels=categorie
 plt.xlabel("Predicted values", fontdict={'size': 14}, labelpad=10)
 plt.ylabel("Actual values", fontdict={'size': 14}, labelpad=10)
 plt.title("Confusion Matrix - DistilBERT (Without Fine-tuning)", fontdict={'size': 18}, pad=20)
-plt.savefig('../analysis_plots/confusion_matrix_bert_no_finetune.png', dpi=300, bbox_inches='tight')
+plt.savefig('analysis_plots/confusion_matrix_bert_no_finetune.png', dpi=300, bbox_inches='tight')

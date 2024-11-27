@@ -17,52 +17,108 @@ The Reddit posts for the 20 Premier League teams are gathered using PRAW. The sc
 5. [Analysis Plots](#analysis-plots)
 6. [Conclusion](#conclusion)
 
-## File Structure
+## Setup Instructions
 
+### 1. Create Python Virtual Environment
+Run the following commands to set up a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate
 ```
-NLP_Final_Project/
-│
-├── analysis_plots/
-│   ├── confusion_matrix_bert.png
-│   ├── confusion_matrix_bert_no_finetune.png
-│   ├── confusion_matrix_BNB.png
-│   ├── confusion_matrix_LR.png
-│   ├── roc_curve_bert.png
-│   ├── roc_curve_bert_no_finetune.png
-│   ├── roc_curve_bnb.png
-│   └── roc_curve_lr.png
-│
-├── data_processed/
-│   ├── large_reddit_labelled.csv
-│   └── reddit_rising.csv
-|
-├── extract_scripts/
-│   ├── fetch_team_new_data.ipynb
-│   └── fetch_team_rising_data.ipynb
-|
-├── model_scripts/
-│   ├── bert_finetuned.py
-│   ├── bert_pretrained.py
-│   ├── reddit_bert_prediction.py
-│   └── models_analysis.py
-|
-├── mylib/
-│   ├── __init__.py
-│   └── lib.py
-|
-├── notebooks/
-│   ├── bert.ipynb
-│   ├── understood.ipynb
-│   ├── underv2 copy.ipynb
-│   └── underv2.ipynb
-│
-├── transform_scripts/
-│   └── process_rising_data.ipynb
-|
-├── README.md
-└── requirements.txt
-```
+
 ---
+
+### 2. Install Required Libraries
+Install all the dependencies using the `requirements.txt` file:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 3. [OPTIONAL] Fetch Unlabeled Reddit Data
+You can fetch new or rising Reddit posts using the provided scripts. Note that we have included pre-fetched datasets in the repository (`data_raw` folder) to save time, as these scripts may take a while to run.
+
+#### Fetch new Reddit posts:
+- Script: `extract_scripts/fetch_team_new_data.ipynb`
+- Output: `data_raw/reddit_soccer_dataset.csv`
+
+#### Fetch rising Reddit posts:
+- Script: `extract_scripts/fetch_team_rising_data.ipynb`
+- Output: `data_raw/reddit_rising.csv`
+
+---
+
+### 4. Data Preparation and Baseline Evaluation
+Clean and lemmatize the data, then evaluate **BNB** and **LR** models:
+```bash
+python model_scripts/models_analysis.py
+```
+
+---
+
+### 5. Evaluate Pre-trained DistilBERT
+Run the pre-trained DistilBERT model on the dataset:
+```bash
+python model_scripts/bert_pretrained.py
+```
+
+---
+
+### 6. Fine-tune and Evaluate DistilBERT
+Fine-tune the DistilBERT model on the dataset. This model achieves the highest accuracy:
+```bash
+python model_scripts/bert_finetuned.py
+```
+
+---
+
+### 7. Process Rising Reddit Data for Prediction
+Prepare the rising Reddit dataset for prediction:
+```bash
+python transform_scripts/process_rising_data.py
+```
+- Output: `data_processed/reddit_rising.csv`
+
+---
+
+### 8. Predict Sentiment on Rising Reddit Data
+Use the fine-tuned DistilBERT model to predict sentiment scores for the rising Reddit data:
+```bash
+python model_scripts/reddit_bert_prediction.py
+```
+
+---
+
+## Repository Structure
+```
+|-- data_raw/
+|   |-- reddit_soccer_dataset.csv
+|   |-- reddit_rising.csv
+|
+|-- data_processed/
+|   |-- reddit_rising.csv
+|
+|-- extract_scripts/
+|   |-- fetch_team_new_data.ipynb
+|   |-- fetch_team_rising_data.ipynb
+|
+|-- model_scripts/
+|   |-- models_analysis.py
+|   |-- bert_pretrained.py
+|   |-- bert_finetuned.py
+|   |-- reddit_bert_prediction.py
+|
+|-- transform_scripts/
+|   |-- process_rising_data.py
+|
+|-- requirements.txt
+|-- README.md
+```
+
+---
+
+
 
 ## Introduction
 In this analysis, we explore three different models for performing text classification on a dataset. Each model is evaluated using common machine learning metrics such as accuracy, precision, recall, F1-score, and AUC. The primary objective is to understand how well each model performs on the given dataset and identify any strengths or weaknesses that may influence their use in practical applications.

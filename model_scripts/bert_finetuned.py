@@ -15,7 +15,7 @@ from mylib.lib import tokenize_function
 # Load the tokenizer for DistilBERT
 tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
 
-df = pd.read_csv('../data_processed/large_reddit_labelled.csv')  
+df = pd.read_csv('data_processed/large_reddit_labelled.csv')  
 
 print(df.shape)
 
@@ -44,14 +44,14 @@ model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-unc
 
 # Define training arguments for the HuggingFace Trainer API
 training_args = TrainingArguments(
-    output_dir="./results",          # Directory for saved models
+    output_dir="./model_scripts/results",          # Directory for saved models
     evaluation_strategy="epoch",    # Evaluate every epoch
     learning_rate=2e-5,             # Learning rate
     per_device_train_batch_size=16, # Batch size for training
     per_device_eval_batch_size=16,  # Batch size for evaluation
     num_train_epochs=3,             # Number of epochs
     weight_decay=0.01,              # Apply weight decay
-    logging_dir='./logs',           # Directory for logging
+    logging_dir='./model_scripts/logs',           # Directory for logging
     logging_steps=10,
     save_total_limit=1              # Save only the best checkpoint
 )

@@ -20,7 +20,7 @@ def get_latest_checkpoint(checkpoint_dir='./results'):
     return os.path.join(checkpoint_dir, latest_checkpoint)
 
 # Get the latest checkpoint dynamically
-latest_checkpoint = get_latest_checkpoint('./results')
+latest_checkpoint = get_latest_checkpoint('./model_scripts/results')
 
 # Load the tokenizer and fine-tuned model
 tokenizer = DistilBertTokenizer.from_pretrained(latest_checkpoint)
@@ -33,7 +33,7 @@ trainer = Trainer(
 )
 
 # Load the new dataset for prediction
-predict_df = pd.read_csv('../data_processed/reddit_rising.csv')  # Replace with your file path
+predict_df = pd.read_csv('data_processed/reddit_rising.csv')  # Replace with your file path
 
 # Rename the column to match the expected input format
 predict_dataset = predict_df.rename(columns={'combined': 'text'})
@@ -62,4 +62,4 @@ team_category_means = predict_df.groupby("team")["category"].mean()
 # Print or save the results
 print(team_category_means)
 
-team_category_means.to_csv("../data_processed/bert_predictions.csv")
+team_category_means.to_csv("data_processed/bert_predictions.csv")
