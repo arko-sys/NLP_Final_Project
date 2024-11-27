@@ -123,26 +123,27 @@ This analysis allows us to gauge whether the sentiment of the fan base is aligne
 
 | Team                | Sentiment Score |
 |---------------------|-----------------|
-| Arsenal            | 0.775934        |
-| Aston Villa        | 0.682081        |
-| Bournemouth        | 0.783920        |
-| Brentford          | 0.736641        |
-| Brighton           | 0.820669        |
-| Chelsea            | 0.778523        |
-| Crystal Palace     | 0.776316        |
-| Everton            | 0.631258        |
-| Fulham             | 0.568905        |
-| Ipswich Town       | 0.740088        |
-| Leicester City     | 0.561983        |
-| Liverpool          | 0.615605        |
-| Man City           | 0.596692        |
-| Man United         | 0.568584        |
-| Newcastle          | 0.517703        |
-| Nottingham Forest  | 0.621677        |
-| Southampton        | 0.533333        |
-| Tottenham          | 0.693164        |
-| West Ham           | 0.624535        |
-| Wolves             | 0.713287        |
+| Arsenal            | 0.809129        |
+| Aston Villa        | 0.749518        |
+| Bournemouth        | 0.804020        |
+| Brentford          | 0.744275        |
+| Brighton           | 0.826748        |
+| Chelsea            | 0.783317        |
+| Crystal Palace     | 0.782895        |
+| Everton            | 0.627595        |
+| Fulham             | 0.674912        |
+| Ipswich Town       | 0.845815        |
+| Leicester City     | 0.696281        |
+| Liverpool          | 0.732999        |
+| Man City           | 0.717557        |
+| Man United         | 0.718289        |
+| Newcastle          | 0.642105        |
+| Nottingham Forest  | 0.687117        |
+| Southampton        | 0.679167        |
+| Tottenham          | 0.783784        |
+| West Ham           | 0.762082        |
+| Wolves             | 0.888112        |
+
 
 
 The results from this analysis will be useful for understanding the relationship between public sentiment and betting behavior, providing valuable insights for both sports enthusiasts and bettors.
