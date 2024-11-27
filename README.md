@@ -17,6 +17,51 @@ The Reddit posts for the 20 Premier League teams are gathered using PRAW. The sc
 5. [Analysis Plots](#analysis-plots)
 6. [Conclusion](#conclusion)
 
+## File Structure
+
+```
+NLP_Final_Project/
+│
+├── analysis_plots/
+│   ├── confusion_matrix_bert.png
+│   ├── confusion_matrix_bert_no_finetune.png
+│   ├── confusion_matrix_BNB.png
+│   ├── confusion_matrix_LR.png
+│   ├── roc_curve_bert.png
+│   ├── roc_curve_bert_no_finetune.png
+│   ├── roc_curve_bnb.png
+│   └── roc_curve_lr.png
+│
+├── data_processed/
+│   ├── large_reddit_labelled.csv
+│   └── reddit_rising.csv
+|
+├── extract_scripts/
+│   ├── fetch_team_new_data.ipynb
+│   └── fetch_team_rising_data.ipynb
+|
+├── model_scripts/
+│   ├── bert_finetuned.py
+│   ├── bert_pretrained.py
+│   ├── reddit_bert_prediction.py
+│   └── models_analysis.py
+|
+├── mylib/
+│   ├── __init__.py
+│   └── lib.py
+|
+├── notebooks/
+│   ├── bert.ipynb
+│   ├── understood.ipynb
+│   ├── underv2 copy.ipynb
+│   └── underv2.ipynb
+│
+├── transform_scripts/
+│   └── process_rising_data.ipynb
+|
+├── README.md
+└── requirements.txt
+```
 ---
 
 ## Introduction
@@ -79,22 +124,28 @@ Each model's performance was evaluated using the following metrics:
 
 The following analysis plots visualize the performance of each model:
 
-1. **Confusion Matrix for BERT**  
+### 1. Confusion Matrix for BERT (No Fine-Tuning)
+   ![BERT Confusion Matrix (No Fine-Tuning)](analysis_plots/confusion_matrix_bert_no_finetune.png)
+
+### 2. Confusion Matrix for BERT 
    ![BERT Confusion Matrix](analysis_plots/confusion_matrix_bert.png)
 
-2. **Confusion Matrix for BNB**  
+### 3. Confusion Matrix for BNB 
    ![BNB Confusion Matrix](analysis_plots/confusion_matrix_BNB.png)
 
-3. **Confusion Matrix for LR**  
+### 4. Confusion Matrix for LR  
    ![LR Confusion Matrix](analysis_plots/confusion_matrix_LR.png)
 
-4. **ROC Curve for BERT**  
+### 5. ROC Curve for BERT (No Fine-Tuning)  
+   ![BERT ROC Curve (No Fine-Tuning)](analysis_plots/roc_curve_bert_no_finetune.png)
+
+### 6. ROC Curve for BERT
    ![BERT ROC Curve](analysis_plots/roc_curve_bert.png)
 
-5. **ROC Curve for BNB**  
+### 7. ROC Curve for BNB  
    ![BNB ROC Curve](analysis_plots/roc_curve_bnb.png)
 
-6. **ROC Curve for LR**  
+### 8. ROC Curve for LR  
    ![LR ROC Curve](analysis_plots/roc_curve_lr.png)
 
 These plots provide a visual representation of each model's performance across different classification metrics, helping us understand how well each model differentiates between classes and handles misclassifications.
@@ -143,7 +194,5 @@ This analysis allows us to gauge whether the sentiment of the fan base is aligne
 | Tottenham          | 0.783784        |
 | West Ham           | 0.762082        |
 | Wolves             | 0.888112        |
-
-
 
 The results from this analysis will be useful for understanding the relationship between public sentiment and betting behavior, providing valuable insights for both sports enthusiasts and bettors.
